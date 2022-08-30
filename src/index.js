@@ -1,24 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { CameraFeed } from './components/camera-feed';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
 
-// Upload to local seaweedFS instance
-const uploadImage = async file => {
-    const formData = new FormData();
-    formData.append('file', file);
-
-    // Connect to a seaweedfs instance
-};
-
-function App() {
-    return (
-        <div className="App">
-            <h1>Teste Ponto Massivo Techware</h1>
-            <CameraFeed sendFile={uploadImage} />
-        </div>
-    );
-}
-
-const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
